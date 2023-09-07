@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('polls', '0003_remove_question_end_date_alter_question_pub_date'),
     ]
@@ -13,11 +12,13 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='question',
             name='end_date',
-            field=models.DateTimeField(blank=True, null=True, verbose_name='date ended'),
+            field=models.DateTimeField(blank=True, null=True,
+                                       verbose_name='date ended'),
         ),
         migrations.AlterField(
             model_name='question',
             name='pub_date',
-            field=models.DateTimeField(auto_now_add=True, verbose_name='date published'),
+            field=models.DateTimeField(auto_now_add=True,
+                                       verbose_name='date published'),
         ),
     ]

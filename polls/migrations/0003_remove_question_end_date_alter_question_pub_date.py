@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('polls', '0002_question_end_date_alter_question_pub_date'),
     ]
