@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
@@ -10,10 +10,6 @@ from .models import Choice, Question
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
-
-    def get_queryset(self):
-        """Return the last five published questions."""
-        return Question.objects.order_by('-pub_date')[:5]
 
     def get_queryset(self):
         """
@@ -35,6 +31,17 @@ class DetailView(generic.DetailView):
         """
         return Question.objects.filter(pub_date__lte=timezone.now())
 
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if not self.object.is_published():
+            raise Http404("Question does not exist or is not published yet.")
+        if not self.object.can_vote():
+            return render(request, 'polls/results.html', {
+                'question': self.object,
+                'message': "Voting has been closed."
+            })
+        return super().get(request, *args, **kwargs)
+
 
 class ResultsView(generic.DetailView):
     model = Question
@@ -53,11 +60,22 @@ def detail(request, question_id):
 
 def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'polls/results.html', {'question': question})
+    return render(request, 'polls/results.html',
+                  {'question': question})
 
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
+
+    if not question.is_published():
+        raise Http404("Question does not exist or is not published yet.")
+
+    if not question.can_vote():
+        return render(request, 'polls/detail.html', {
+            'question': question,
+            'error_message': "Voting is not allowed for this question.",
+        })
+
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
@@ -78,4 +96,5 @@ def vote(request, question_id):
 
 def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'polls/detail.html', {'question': question})
+    return render(request, 'polls/detail.html',
+                  {'question': question})
