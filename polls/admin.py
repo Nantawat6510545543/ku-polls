@@ -13,12 +13,14 @@ class QuestionAdmin(admin.ModelAdmin):
         (None, {'fields': ['question_text']}),
         (
             'Date information',
-            {'fields': ['pub_date'], 'classes': ['collapse']}),
+            {'fields': ['pub_date', 'end_date'], 'classes': ['collapse']}),
     ]
-    list_display = ('question_text', 'pub_date', 'was_published_recently')
+    list_display = ('id', 'question_text', 'pub_date', 'end_date'
+                    , 'is_published', 'was_published_recently', 'can_vote')
     inlines = [ChoiceInline]
-    list_filter = ['pub_date']
+    list_filter = ['pub_date', 'end_date']
     search_fields = ['question_text']
+    ordering = ('id',)
 
 
 admin.site.register(Question, QuestionAdmin)
