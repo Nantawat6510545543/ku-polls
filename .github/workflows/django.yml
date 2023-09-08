@@ -5,10 +5,14 @@ on:
     branches:
       - main
       - iteration2
+      - iteration3
+      - iteration4
   pull_request:
     branches:
       - main
       - iteration2
+      - iteration3
+      - iteration4
 
 jobs:
   build:
