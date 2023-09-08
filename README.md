@@ -1,4 +1,5 @@
 ## KU Polls and Surveys
+[![Django CI](https://github.com/Nantawat6510545543/ku-polls/actions/workflows/django.yml/badge.svg?branch=iteration2)](https://github.com/Nantawat6510545543/ku-polls/actions/workflows/django.yml)
 
 This is Web application for polls and surveys at Kasetsart University.  
 App created as part of
