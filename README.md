@@ -1,9 +1,10 @@
 ## KU Polls and Surveys
+
 [![Django CI](https://github.com/Nantawat6510545543/ku-polls/actions/workflows/django.yml/badge.svg?branch=main)](https://github.com/Nantawat6510545543/ku-polls/actions/workflows/django.yml)
 
 This is Web application for polls and surveys at Kasetsart University.  
 App created as part of
-the [Individual Software Process](https://cpske.github.io/ISP) course at
+the Individual Software Process course at
 Kasetsart University.
 
 ## Install and Run
@@ -72,6 +73,15 @@ python manage.py runserver
 deactivate
 ```
 
+## Demo Users
+
+You can use the following account to access the website.
+
+| Username  | Password  |
+|:---------:|-----------|
+| demouser1 | passdemo1 |
+| demouser2 | passdemo2 |
+
 ## Project Documents
 
 All project documents are in the [Project Wiki](../../wiki/Home).
@@ -81,10 +91,11 @@ All project documents are in the [Project Wiki](../../wiki/Home).
 - [Development Plan](../../wiki/Development-Plan)
 
 ### Iterations
+
 - [Iteration 1 Plan](../../wiki/Iteration-1-Plan)
 - [Iteration 2 Plan](../../wiki/Iteration-2-Plan)
 - [Iteration 3 Plan](../../wiki/Iteration-3-Plan)
 - [Iteration 4 Plan](../../wiki/Iteration-4-Plan)
 - [Task Board](../../projects)
 
-[django-tutorial]: TODO-write-the-django-tutorial-URL-here
+[django-tutorial]:(https://docs.djangoproject.com/en/4.1/intro/tutorial01/)
