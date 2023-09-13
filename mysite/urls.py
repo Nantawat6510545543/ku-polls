@@ -19,11 +19,14 @@ from django.urls import include, path
 from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
+from . import views
 
 admin.site.site_header = "Polls Administration"
 urlpatterns = [
     path('', RedirectView.as_view(pattern_name='polls:index',
                                   permanent=False)),
     path('polls/', include('polls.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
+    path('signup/', views.signup, name='signup'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
