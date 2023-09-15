@@ -84,7 +84,7 @@ DATABASES = {
 
 AUTHENTICATION_BACKENDS = [
     # username & password authentication
-   'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -106,8 +106,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGIN_REDIRECT_URL = 'polls:index'    # after login, show list of polls
-LOGOUT_REDIRECT_URL = 'login'         # after logout, direct to where?
+LOGIN_REDIRECT_URL = 'polls:index'  # after login, show list of polls
+LOGOUT_REDIRECT_URL = 'login'  # after logout, direct to where?
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
