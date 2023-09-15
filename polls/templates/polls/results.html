@@ -1,37 +1,24 @@
 {% block content %}
-<h1>{{ question.question_text }}</h1>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+<head>
+    <title>Results</title>
+</head>
+<div class="topnav">
+  <a href="{% url 'polls:index' %}" >Go to Home</a>
+    {% if user.is_authenticated %}
+        <a>User: {{user.username.title}} <a href="{% url 'logout' %}">Logout</a> </a>
+    {% else %}
+        <a class="link" href="{% url 'login' %}">Login</a>
+        <a class="link" href="{% url 'signup' %}">Register</a>
+    {% endif %}
+</div>
 
-{% if message %}
-<p>{{ message }}</p>
-{% endif %}
+<h1>{{ question.question_text }}</h1>
 
 <div id="chart_div" style="width: 500px; height: 300px;"></div>
 
-<style>
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  th, td {
-    border: 1px solid #ccc;
-    padding: 8px 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-
-  th {
-    background-color: #f2f2f2;
-  }
-
-  tr:hover {
-    background-color: #f5f5f5;
-  }
-</style>
-
-<table>
+<table class="style2">
   <thead>
     <tr>
       <th>Choices</th>
@@ -47,8 +34,6 @@
     {% endfor %}
   </tbody>
 </table>
-
-<p><a href="{% url 'polls:index' %}">Back to List of Polls</a></p>
 
 <script type="text/javascript"
         src="https://www.gstatic.com/charts/loader.js"></script>
@@ -68,6 +53,7 @@
 
         var options = {
             title: 'Poll Results',
+            backgroundColor: 'none',
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));

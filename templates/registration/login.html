@@ -1,21 +1,27 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Please Login</title>
+    <title>Login</title>
 </head>
 <body>
-
-<h2>Login</h2>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <p>
-        <button type="submit">Login</button>
-    </p>
-    <input type="hidden" name="next" value="{{next}}"/>
-</form>
-<p>Don't have an account? <a href="/signup">Sign up</a></p>
-<p>Want to visit our page <a href="{{next}}">here</a></p>
+<div class="form-container">
+    <h2>Login</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-table">
+            {{ form.as_table }}
+        </div>
+        <p class="form-submit">
+            <button type="submit">Login</button>
+        </p>
+        <input type="hidden" name="next" value="{{polls}}"/>
+    </form>
+    <p>Don't have an account? <a href="/signup">Sign up</a></p>
+    <p>Want to visit our page first? <a href="/polls">Click here.</a></p>
+</div>
 
 </body>
 </html>
