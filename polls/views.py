@@ -41,29 +41,27 @@ class DetailView(generic.DetailView):
                            "Question does not exist or is not published yet.")
             return redirect("polls:index")
 
+        try:
+            vote = Vote.objects.get(user=request.user,
+                                    choice__in=self.object.choice_set.all())
+            previous_vote = vote.choice.choice_text
+        except (Vote.DoesNotExist, TypeError):
+            previous_vote = ""
+
         if not self.object.can_vote():
             return render(request, 'polls/results.html', {
                 'question': self.object,
                 'message': "Voting has been closed."
             })
-        return super().get(request, *args, **kwargs)
+
+        return render(request, self.template_name,
+                      {"question": self.object,
+                       "previous_vote": previous_vote})
 
 
 class ResultsView(generic.DetailView):
     model = Question
     template_name = 'polls/results.html'
-
-
-def index(request):
-    latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    context = {'latest_question_list': latest_question_list}
-    return render(request, 'polls/index.html', context)
-
-
-def results(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'polls/results.html',
-                  {'question': question})
 
 
 @login_required
