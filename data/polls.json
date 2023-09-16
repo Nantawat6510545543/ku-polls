@@ -1,0 +1,190 @@
+[
+{
+  "model": "polls.question",
+  "pk": 2,
+  "fields": {
+    "question_text": "How much personal time do you spend studying?",
+    "pub_date": "2023-09-01T10:17:52.929Z",
+    "end_date": null
+  }
+},
+{
+  "model": "polls.question",
+  "pk": 3,
+  "fields": {
+    "question_text": "How much personal time do you spend on entertainment?",
+    "pub_date": "2023-09-01T10:24:28.067Z",
+    "end_date": null
+  }
+},
+{
+  "model": "polls.question",
+  "pk": 4,
+  "fields": {
+    "question_text": "If you went to study, which country would you like to go to?",
+    "pub_date": "2023-09-11T17:00:00Z",
+    "end_date": "2023-09-14T17:00:00Z"
+  }
+},
+{
+  "model": "polls.question",
+  "pk": 5,
+  "fields": {
+    "question_text": "Which programming language do you prefer?",
+    "pub_date": "2023-09-06T07:38:47Z",
+    "end_date": "2023-09-07T07:38:46Z"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 4,
+  "fields": {
+    "question": 2,
+    "choice_text": "30 minutes daily"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 5,
+  "fields": {
+    "question": 2,
+    "choice_text": "1 hour daily"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 6,
+  "fields": {
+    "question": 2,
+    "choice_text": "2 hours daily"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 7,
+  "fields": {
+    "question": 2,
+    "choice_text": "Varies depending on my schedule"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 8,
+  "fields": {
+    "question": 3,
+    "choice_text": "1 hour daily"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 9,
+  "fields": {
+    "question": 3,
+    "choice_text": "2 hours daily"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 10,
+  "fields": {
+    "question": 3,
+    "choice_text": "3 hours daily"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 11,
+  "fields": {
+    "question": 3,
+    "choice_text": "Varies depending on my mood and availability"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 12,
+  "fields": {
+    "question": 5,
+    "choice_text": "C++"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 13,
+  "fields": {
+    "question": 5,
+    "choice_text": "Python"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 14,
+  "fields": {
+    "question": 4,
+    "choice_text": "Japan"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 15,
+  "fields": {
+    "question": 4,
+    "choice_text": "American"
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 1,
+  "fields": {
+    "choice": 10,
+    "user": 4
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 2,
+  "fields": {
+    "choice": 10,
+    "user": 2
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 3,
+  "fields": {
+    "choice": 7,
+    "user": 2
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 4,
+  "fields": {
+    "choice": 14,
+    "user": 2
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 5,
+  "fields": {
+    "choice": 15,
+    "user": 5
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 6,
+  "fields": {
+    "choice": 10,
+    "user": 5
+  }
+},
+{
+  "model": "polls.vote",
+  "pk": 7,
+  "fields": {
+    "choice": 5,
+    "user": 5
+  }
+}
+]
