@@ -1,6 +1,38 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>KU Polls</title>
+</head>
+<body>
+<div class="topnav">
+    {% if user.is_authenticated %}
+        <a style="color: rgb(125, 125, 225);">
+            Welcome back, {{user.username.title}}
+            <a style="color: rgb(255,69,0);"
+               href="{% url 'logout' %}">Logout</a>
+        </a>
+    {% else %}
+        <a class="link" style="color: rgb(0, 128, 0)"
+           href="{% url 'login' %}?next={{request.path}}">Login</a>
+        <a class="link" style="color: rgb(255, 165, 0)"
+           href="{% url 'signup' %}">Register</a>
+    {% endif %}
+    {% if messages %}
+        <a>
+            {% for message in messages %}
+            <a>| </a>
+            <a style="color: rgb(255,255,0);"
+               {% if message.tags %} class="{{ message.tags }}"
+               {% endif %}>{{ message }}
+            </a>
+            {% endfor %}
+        </a>
+    {% endif %}
+    <p></p>
+</div>
+<p></p>
 {% if latest_question_list %}
    <table  class="style1">
     <thead>
@@ -22,9 +54,9 @@
             </td>
             <td>
                 {% if question.can_vote %}
-                <b><a class="strokeme" style="color: rgb(0,100,0);">Voting is open.</a></b>
+                <b><a style="color: rgb(0,100,0);">Voting is open.</a></b>
                 {% else %}
-                <b><a class="strokeme" style="color: rgb(255,0,0);">Voting is closed.</a></b>
+                <b><a style="color: rgb(255,0,0);">Voting is closed.</a></b>
                 {% endif %}
             </td>
             <td>
