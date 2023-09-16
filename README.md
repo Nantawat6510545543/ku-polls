@@ -73,14 +73,22 @@ python manage.py runserver
 deactivate
 ```
 
-## Demo Users
+## Demo User Accounts
 
-You can use the following account to access the website.
+You can utilize the following user accounts to explore the website's features:
 
 | Username  | Password  |
 |:---------:|-----------|
 | demouser1 | passdemo1 |
 | demouser2 | passdemo2 |
+
+## Demo Admin Account
+
+To access the administrator features and settings, you can use the following account:
+
+| Admin | Password  |
+|:-----:|-----------|
+| mossg | 12345678 |
 
 ## Project Documents
 
