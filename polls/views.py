@@ -85,9 +85,14 @@ def vote(request, question_id):
 
     try:
         vote = Vote.objects.get(user=user, choice__question=question)
-        vote.choice = selected_choice
+        if vote.choice == selected_choice:
+            messages.info(request, "Your vote remains the same.")
+        else:
+            vote.choice = selected_choice
+            messages.success(request, "Your vote has been changed.")
     except Vote.DoesNotExist:
         vote = Vote(user=user, choice=selected_choice)
+        messages.success(request, "Your vote has been recorded.")
 
     vote.save()
     return HttpResponseRedirect(
