@@ -7,7 +7,7 @@ App created as part of
 the Individual Software Process course at
 Kasetsart University.
 
-## Installation and Configuration
+## Install instructions
 Read the installation instructions at [Installation.md](./Installation.md).
 
 ## How to run
