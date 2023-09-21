@@ -4,8 +4,8 @@
   "pk": 2,
   "fields": {
     "question_text": "How much personal time do you spend studying?",
-    "pub_date": "2023-09-01T10:17:52.929Z",
-    "end_date": null
+    "pub_date": "2023-09-01T10:00:00Z",
+    "end_date": "2023-09-06T10:00:00Z"
   }
 },
 {
@@ -13,8 +13,8 @@
   "pk": 3,
   "fields": {
     "question_text": "How much personal time do you spend on entertainment?",
-    "pub_date": "2023-09-01T10:24:28.067Z",
-    "end_date": null
+    "pub_date": "2023-09-01T10:00:00Z",
+    "end_date": "2023-09-20T10:00:00Z"
   }
 },
 {
@@ -22,8 +22,8 @@
   "pk": 4,
   "fields": {
     "question_text": "If you went to study, which country would you like to go to?",
-    "pub_date": "2023-09-11T17:00:00Z",
-    "end_date": "2023-09-14T17:00:00Z"
+    "pub_date": "2023-09-07T05:00:00Z",
+    "end_date": "2023-10-07T05:00:00Z"
   }
 },
 {
@@ -31,8 +31,17 @@
   "pk": 5,
   "fields": {
     "question_text": "Which programming language do you prefer?",
-    "pub_date": "2023-09-06T07:38:47Z",
-    "end_date": "2023-09-07T07:38:46Z"
+    "pub_date": "2023-09-06T11:00:00Z",
+    "end_date": null
+  }
+},
+{
+  "model": "polls.question",
+  "pk": 6,
+  "fields": {
+    "question_text": "How do you prefer to acquire new knowledge or skills for personal or professional development?",
+    "pub_date": "2023-09-20T11:00:00Z",
+    "end_date": null
   }
 },
 {
@@ -104,7 +113,7 @@
   "pk": 12,
   "fields": {
     "question": 5,
-    "choice_text": "C++"
+    "choice_text": "Python"
   }
 },
 {
@@ -112,7 +121,7 @@
   "pk": 13,
   "fields": {
     "question": 5,
-    "choice_text": "Python"
+    "choice_text": "Java"
   }
 },
 {
@@ -132,59 +141,171 @@
   }
 },
 {
-  "model": "polls.vote",
-  "pk": 1,
+  "model": "polls.choice",
+  "pk": 16,
   "fields": {
-    "choice": 10,
-    "user": 4
+    "question": 5,
+    "choice_text": "JavaScript"
   }
 },
 {
-  "model": "polls.vote",
-  "pk": 2,
+  "model": "polls.choice",
+  "pk": 17,
   "fields": {
-    "choice": 10,
-    "user": 2
+    "question": 5,
+    "choice_text": "SQL"
   }
 },
 {
-  "model": "polls.vote",
-  "pk": 3,
+  "model": "polls.choice",
+  "pk": 18,
   "fields": {
-    "choice": 7,
-    "user": 2
+    "question": 5,
+    "choice_text": "Rust"
   }
 },
 {
-  "model": "polls.vote",
-  "pk": 4,
+  "model": "polls.choice",
+  "pk": 19,
   "fields": {
-    "choice": 14,
-    "user": 2
+    "question": 5,
+    "choice_text": "C++"
   }
 },
 {
-  "model": "polls.vote",
-  "pk": 5,
+  "model": "polls.choice",
+  "pk": 20,
   "fields": {
-    "choice": 15,
-    "user": 5
+    "question": 5,
+    "choice_text": "C#"
   }
 },
 {
-  "model": "polls.vote",
-  "pk": 6,
+  "model": "polls.choice",
+  "pk": 21,
   "fields": {
-    "choice": 10,
-    "user": 5
+    "question": 6,
+    "choice_text": "Traditional classroom setting"
   }
 },
 {
-  "model": "polls.vote",
-  "pk": 7,
+  "model": "polls.choice",
+  "pk": 22,
   "fields": {
-    "choice": 5,
-    "user": 5
+    "question": 6,
+    "choice_text": "Online courses"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 23,
+  "fields": {
+    "question": 6,
+    "choice_text": "Books and self-study"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 24,
+  "fields": {
+    "question": 6,
+    "choice_text": "Workshops and seminars"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 25,
+  "fields": {
+    "question": 6,
+    "choice_text": "On-the-job training"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 26,
+  "fields": {
+    "question": 6,
+    "choice_text": "Mentorship programs"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 27,
+  "fields": {
+    "question": 6,
+    "choice_text": "Peer learning"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 28,
+  "fields": {
+    "question": 4,
+    "choice_text": "Italy"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 29,
+  "fields": {
+    "question": 4,
+    "choice_text": "Spain"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 30,
+  "fields": {
+    "question": 4,
+    "choice_text": "England"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 31,
+  "fields": {
+    "question": 4,
+    "choice_text": "France"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 32,
+  "fields": {
+    "question": 4,
+    "choice_text": "Germany"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 33,
+  "fields": {
+    "question": 4,
+    "choice_text": "Others"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 34,
+  "fields": {
+    "question": 4,
+    "choice_text": "I prefer not to study abroad."
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 35,
+  "fields": {
+    "question": 5,
+    "choice_text": "Others"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 36,
+  "fields": {
+    "question": 6,
+    "choice_text": "Others"
   }
 }
 ]

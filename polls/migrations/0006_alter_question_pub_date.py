@@ -5,7 +5,6 @@ import django.utils.timezone
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('polls', '0005_alter_question_end_date_alter_question_pub_date'),
     ]
@@ -14,6 +13,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='question',
             name='pub_date',
-            field=models.DateTimeField(default=django.utils.timezone.now, verbose_name='Date published'),
+            field=models.DateTimeField(default=django.utils.timezone.now,
+                                       verbose_name='Date published'),
         ),
     ]
