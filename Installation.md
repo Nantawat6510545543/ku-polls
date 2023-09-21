@@ -17,7 +17,7 @@ cd ku-polls
     for **Mac/Linux** use this command: 
     ```
     chmod +x linux-setup-script.sh
-    ./setup-linux.sh
+    ./linux-setup-script.sh
     ```
    
     for **Windows** use this command:
