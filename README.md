@@ -15,7 +15,7 @@ Read the installation instructions at [Installation.md](./Installation.md).
 1. To run the server
 
 ```
-python manage.py runserver
+python manage.py runserver --insecure
 ```
 
 2. To access the app at http://localhost:8000
