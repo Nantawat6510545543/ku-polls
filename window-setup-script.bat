@@ -1,25 +1,29 @@
-@REM Create and activate virtual environment
+@echo off
+echo Setting up the project environment...
+
+:: Create and activate virtual environment
 python -m venv venv
 venv\Scripts\activate
 
-@REM Install requirements
+:: Install requirements
 pip install -r requirements.txt
 
-@REM Create .env file
+:: Create .env file
 copy sample.env .env
 
-@REM Run migrations
+:: Run migrations
 python manage.py migrate
 
-@REM Load data
+:: Load initial data
 python manage.py loaddata data/polls.json
 python manage.py loaddata data/users.json
 
-@REM Load vote data (optional)
-@REM python manage.py loaddata data/vote.json
+:: Uncomment the line below if you want to load vote data (optional)
+:: python manage.py loaddata data/vote.json
 
-@REM Run tests
+:: Run tests
 python manage.py test
 
-@REM Start server
+:: Start the server
+echo Starting the server...
 python manage.py runserver --insecure
