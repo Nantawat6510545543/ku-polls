@@ -69,9 +69,6 @@ def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     user = request.user
 
-    if not user.is_authenticated:
-        return redirect('login')
-
     if not question.can_vote():
         messages.error(request, "Vote is not allow")
         return redirect("polls:index")
@@ -79,7 +76,11 @@ def vote(request, question_id):
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
-        messages.error(request, "You didn't select a choice.")
+        previous_page_url = request.META.get('HTTP_REFERER', '')
+        login_page_url = (f"http://127.0.0.1:8000/accounts/login/"
+                          f"?next=/polls/{question.id}/vote/")
+        if previous_page_url != login_page_url:
+            messages.error(request, "You didn't select a choice.")
         return HttpResponseRedirect(
             reverse('polls:detail', args=(question.id,)))
 
@@ -89,12 +90,13 @@ def vote(request, question_id):
             messages.info(request, "Your vote remains the same.")
         else:
             vote.choice = selected_choice
+            vote.save()
             messages.success(request, "Your vote has been changed.")
     except Vote.DoesNotExist:
         vote = Vote(user=user, choice=selected_choice)
+        vote.save()
         messages.success(request, "Your vote has been recorded.")
 
-    vote.save()
     return HttpResponseRedirect(
         reverse("polls:results", args=(question.id,)))
 
