@@ -17,9 +17,7 @@ python manage.py migrate
 :: Load initial data
 python manage.py loaddata data/polls.json
 python manage.py loaddata data/users.json
-
-:: Uncomment the line below if you want to load vote data (optional)
-:: python manage.py loaddata data/vote.json
+python manage.py loaddata data/vote.json
 
 :: Run tests
 python manage.py test
