@@ -3,7 +3,7 @@ echo Setting up the project environment...
 
 :: Create and activate virtual environment
 python -m venv venv
-venv\Scripts\activate
+call .\venv\Scripts\activate
 
 :: Install requirements
 pip install -r requirements.txt
