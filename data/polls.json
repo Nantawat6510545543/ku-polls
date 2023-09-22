@@ -45,6 +45,24 @@
   }
 },
 {
+  "model": "polls.question",
+  "pk": 7,
+  "fields": {
+    "question_text": "What subjects do you believe hold the utmost significance for the average individual in the field of education?",
+    "pub_date": "2023-09-21T11:00:00Z",
+    "end_date": null
+  }
+},
+{
+  "model": "polls.question",
+  "pk": 8,
+  "fields": {
+    "question_text": "What challenges within the realm of education do you believe need to be tackled?",
+    "pub_date": "2023-09-21T11:00:00Z",
+    "end_date": null
+  }
+},
+{
   "model": "polls.choice",
   "pk": 4,
   "fields": {
@@ -306,6 +324,118 @@
   "fields": {
     "question": 6,
     "choice_text": "Others"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 37,
+  "fields": {
+    "question": 7,
+    "choice_text": "Mathematics"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 38,
+  "fields": {
+    "question": 7,
+    "choice_text": "Science (e.g., biology, chemistry, physics)"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 39,
+  "fields": {
+    "question": 7,
+    "choice_text": "Language and literature (e.g., English, literature)"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 40,
+  "fields": {
+    "question": 7,
+    "choice_text": "History and social studies"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 41,
+  "fields": {
+    "question": 7,
+    "choice_text": "Computer science and technology"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 42,
+  "fields": {
+    "question": 7,
+    "choice_text": "Physical education and health"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 43,
+  "fields": {
+    "question": 7,
+    "choice_text": "Arts and creative subjects (e.g., music, visual arts)"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 44,
+  "fields": {
+    "question": 8,
+    "choice_text": "Access to quality education for all socio-economic groups."
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 45,
+  "fields": {
+    "question": 8,
+    "choice_text": "Adequate funding and resources for schools."
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 46,
+  "fields": {
+    "question": 8,
+    "choice_text": "Teacher training and professional development."
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 47,
+  "fields": {
+    "question": 8,
+    "choice_text": "Addressing learning disparities among different student groups."
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 48,
+  "fields": {
+    "question": 8,
+    "choice_text": "Incorporating technology effectively in the classroom."
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 49,
+  "fields": {
+    "question": 8,
+    "choice_text": "Reducing class sizes for improved student-teacher interaction."
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 50,
+  "fields": {
+    "question": 8,
+    "choice_text": "Enhancing curriculum to be more relevant and inclusive."
   }
 }
 ]

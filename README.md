@@ -15,7 +15,7 @@ Read the installation instructions at [Installation.md](./Installation.md).
 1. To run the server
 
 ```
-python manage.py runserver
+python manage.py runserver --insecure
 ```
 
 2. To access the app at http://localhost:8000
@@ -58,6 +58,6 @@ All project documents are in the [Project Wiki](../../wiki/Home).
 - [Iteration 2 Plan](../../wiki/Iteration-2-Plan)
 - [Iteration 3 Plan](../../wiki/Iteration-3-Plan)
 - [Iteration 4 Plan](../../wiki/Iteration-4-Plan)
-- [Task Board](../../projects)
+- [Projects backlog](../../projects/3)
 
 [django-tutorial]:(https://docs.djangoproject.com/en/4.1/intro/tutorial01/)

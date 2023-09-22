@@ -45,7 +45,7 @@ cd ku-polls
 
     for **Mac/Linux**, use this command: 
     ```
-   python -m venv venv           # Create the virtual environment in "env/" (only once)
+   python -m venv venv           # Create the virtual environment in "venv/" (only once)
    . venv/bin/activate           # Start the virtual environment in bash or zsh
     ```
    

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Choice, Question
+from .models import Choice, Question, Vote
 
 
 class ChoiceInline(admin.StackedInline):
@@ -23,4 +23,11 @@ class QuestionAdmin(admin.ModelAdmin):
     ordering = ('id',)
 
 
+class QuestionVote(admin.ModelAdmin):
+    list_display = ('user', 'id', 'choice')
+    ordering = ('user',)
+
+
 admin.site.register(Question, QuestionAdmin)
+
+admin.site.register(Vote, QuestionVote)
