@@ -46,13 +46,13 @@ cd ku-polls
     for **Mac/Linux**, use this command: 
     ```
    python -m venv venv           # Create the virtual environment in "venv/" (only once)
-   . venv/bin/activate           # Start the virtual environment in bash or zsh
+   source ./venv/bin/activate           # Start the virtual environment in bash or zsh
     ```
    
     for **Windows**, use this command:
     ```
     python -m venv venv
-    . .\venv\Scripts\activate
+    call  .\venv\Scripts\activate
     ```
 
 4. Create a `.env` file by copying the contents of `sample.env`:

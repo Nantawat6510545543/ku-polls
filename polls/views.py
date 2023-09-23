@@ -49,10 +49,10 @@ class DetailView(generic.DetailView):
             previous_vote = ""
 
         if not self.object.can_vote():
-            return render(request, 'polls/results.html', {
-                'question': self.object,
-                'message': "Voting has been closed."
-            })
+            question = self.get_object()
+            messages.error(request, "Voting has been closed.")
+            return redirect(
+                reverse('polls:results', args=[question.pk]))
 
         return render(request, self.template_name,
                       {"question": self.object,
@@ -77,12 +77,9 @@ def vote(request, question_id):
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
         previous_page_url = request.META.get('HTTP_REFERER', '')
-        login_page_url = (f"http://127.0.0.1:8000/accounts/login/"
-                          f"?next=/polls/{question.id}/vote/")
-        if previous_page_url != login_page_url:
+        if "login" not in previous_page_url:
             messages.error(request, "You didn't select a choice.")
-        return HttpResponseRedirect(
-            reverse('polls:detail', args=(question.id,)))
+        return redirect(reverse('polls:detail', args=(question.id,)))
 
     try:
         vote = Vote.objects.get(user=user, choice__question=question)
@@ -97,8 +94,7 @@ def vote(request, question_id):
         vote.save()
         messages.success(request, "Your vote has been recorded.")
 
-    return HttpResponseRedirect(
-        reverse("polls:results", args=(question.id,)))
+    return redirect(reverse("polls:results", args=(question.id,)))
 
 
 def detail(request, question_id):

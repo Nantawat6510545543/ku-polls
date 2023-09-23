@@ -437,5 +437,21 @@
     "question": 8,
     "choice_text": "Enhancing curriculum to be more relevant and inclusive."
   }
+},
+{
+  "model": "polls.choice",
+  "pk": 51,
+  "fields": {
+    "question": 8,
+    "choice_text": "Others"
+  }
+},
+{
+  "model": "polls.choice",
+  "pk": 52,
+  "fields": {
+    "question": 7,
+    "choice_text": "Every subject holds its own significance."
+  }
 }
 ]
