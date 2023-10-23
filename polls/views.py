@@ -95,9 +95,3 @@ def vote(request, question_id):
         messages.success(request, "Your vote has been recorded.")
 
     return redirect(reverse("polls:results", args=(question.id,)))
-
-
-def detail(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
-    return render(request, 'polls/detail.html',
-                  {'question': question})
