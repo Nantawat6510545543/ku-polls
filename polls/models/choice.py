@@ -1,5 +1,6 @@
 from django.db import models
-from . import question
+from . import Question
+
 
 class Choice(models.Model):
     """

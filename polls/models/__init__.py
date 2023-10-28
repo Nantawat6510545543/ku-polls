@@ -1,3 +1,3 @@
 from .question import Question
-from .choice   import Choice
-from .vote     import Vote
+from .choice import Choice
+from .vote import Vote
